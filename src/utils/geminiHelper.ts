@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 
 // Define your Gemini AI API endpoint
 const GEMINI_API_URL = "https://api.gemini.com/v1/ai/query";
+const GeminiApiKey = process.env.GEMINI_API_KEY;
 
 // Define the expected response structure from the Gemini AI API
 interface GeminiAIResponse {
@@ -22,7 +23,7 @@ export const callGeminiAI = async (
       },
       {
         headers: {
-          Authorization: "Bearer YOUR_API_KEY_HERE",
+          Authorization: GEMINI_API_URL,
           "Content-Type": "application/json",
         },
       }
